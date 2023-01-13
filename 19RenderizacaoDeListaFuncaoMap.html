@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1..</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+
+    class App extends React.Component{
+
+render(){
+const Nomes=["joao","Ana","carlos"]
+
+  const final= Nomes.map(n => <h3>{nome}</h3>)
+    return(
+<div>
+    {final}
+</div>
+
+//outra forma..
+        // <div>
+        //     { 
+        //         Nomes.map(n => <h3>{nome}</h3>) 
+        //     }
+           
+        // </div>
+        // <div>
+        //     //primeira Forma:::
+        //     <h3>{nomes[0]}</h3>
+        //     <h3>{nomes[1]}</h3> 
+        //     <h3>{nomes[2]}</h3> 
+        // </div>
+    )
+        
+        }
+}
+
+    // let nomes=["joao","Ana","carlos"]
+    // let final=nomes.map(n)
+    // console.log(nomes);
+
+   ReactDOM.render(
+<App />,
+    document.getSelection('root')
+   )
+</script>
+</body>
+</html> 

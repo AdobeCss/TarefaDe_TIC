@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1..</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+
+    class App extends React.Component{
+metodo(){
+    console.log("ola pai")
+}
+metodo2(){
+    console.log("ola mundo")
+}
+
+render(){
+            return(
+                <div>
+                    <p>texto do component pai</p>
+                <CompA metodo={this.metodo} met2={this.metodo2}/> 
+                </div> 
+            )
+        }
+    }
+    class CompA extends React.Component{
+
+render(){
+            return(
+                <div>
+                    <button onclick={this.props.metodo}>click1</button>
+                    <button onclick={this.props.metodo2}>click2</button>
+                    </div> 
+            )
+        }
+    }
+
+   ReactDOM.render(
+<App />,
+    document.getSelection('root')
+   )
+</script>
+</body>
+</html> 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1..</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+
+    class App extends React.Component{
+
+render(){
+    const noticias =[
+
+    {
+        titulo:"Noticia 1",
+        texto:"Texto da Noticia 1",
+        autor:"Autor 1"
+    },
+    {
+        titulo:"Noticia 2",
+        texto:"Texto da Noticia 2",
+        autor:"Autor 2"
+    },
+    {
+        titulo:"Noticia 3",
+        texto:"Texto da Noticia 3",
+        autor:"Autor 3"
+    },
+
+]   
+
+const final=noticias.map(noticia => <Noticia noticia={noticia}/>)
+return(
+    <div>
+        
+    <h2>Noticias</h2>
+        <hr/>
+        {final}
+    </div>
+)
+
+     }
+}
+
+
+
+class Noticia extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        return(
+            <div>
+            
+                <h3>{this.props.noticia.titulo}</h3>
+                <p>{this.props.noticia.texto}</p>
+                <small><i>{this.props.noticia.autor}</i></small>
+                
+            </div>
+        )
+    }
+}
+
+
+   ReactDOM.render(
+<App />,
+    document.getSelection('root')
+   )
+</script>
+</body>
+</html> 

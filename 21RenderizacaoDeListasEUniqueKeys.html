@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1..</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<script type="text/babel">
+
+    class App extends React.Component{
+
+render(){
+ 
+const socios=[
+
+{
+    nome:"joao",
+    idade:"27"
+},
+{
+    nome:"Ano",
+    idade:"30"
+},
+{
+    nome:"Adalberto",
+    idade:"19"
+}
+]
+
+const final=socios.map(socio=><MostrarSocio key={socio.id} socio={socio}/>)
+
+  return(
+    <div>
+       {final}
+    </div>
+)
+
+     }
+}
+
+
+
+class MostrarSocio extends React.Component{
+   constructor(props){
+    super(props)
+   }
+    render(){
+        return(
+            <div>
+                <p>id: {this.props.socio.id}</p>
+                <p>Nome:  {this.props.socio.nome}</p>
+                <p>Idade: {this.props.socio.idede}</p>
+            </div>
+        )
+    }
+}
+
+
+   ReactDOM.render(
+<App />,
+    document.getSelection('root')
+   )
+</script>
+</body>
+</html> 
